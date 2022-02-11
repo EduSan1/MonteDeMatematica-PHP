@@ -34,18 +34,36 @@ if (isset($_POST['btncalc'])) {
 <head>
     <title>Média</title>
     <link rel="stylesheet" type="text/css" href="../css/media.css">
+    <link rel="stylesheet" href="../css/style.css">
     <meta charset="utf-8">
 </head>
 
 <body>
-    <a href="../index.php">
-        <p>Voltar</p>
-    </a>
+
+    <header>
+        <div class="menu">
+            <a href="calculadora.php">
+                <p>Calculadora Simples</p>
+            </a>
+            <a href="media.php">
+                <p>Média Ari</p>
+            </a>
+            <a href="parImpar.php">
+                <p>Par e Impar</p>
+            </a>
+            <a href="tabuada.php">
+                <p>Tabuada</p>
+            </a>
+        </div>
+        <h1>Super treco de Matemática</h1>
+    </header>
+
     <div id="conteudo">
 
-        <header id="titulo">
+
+        <div id="titulo">
             Calculo de Médias
-        </header>
+        </div>
 
         <div id="form">
             <form name="frmMedia" method="post" action="media.php">
