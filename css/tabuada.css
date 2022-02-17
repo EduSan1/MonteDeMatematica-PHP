@@ -9,6 +9,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: #000;
+  font-size: 40px;
+}
+
+.formularioGeral {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -22,7 +35,7 @@ main {
   border: 1px solid #010101;
   width: 150px;
   height: 300px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .form {
   display: flex;
@@ -38,11 +51,6 @@ main {
 
 .formulario {
     margin: 20px;
-}
-.txtArea1 {
-  
-}
-.txtArea2 {
 }
 
 .botao {

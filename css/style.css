@@ -1,34 +1,40 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
-
+body {
+  height: 100vh;
+  background-color: whitesmoke;
+}
 .menu {
-    display: flex;
-    
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #999999;
+  display: flex;
+  transition: all 1s;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: rgb(245,133,41);
+  background: linear-gradient(90deg, rgba(245,133,41,1) 0%, rgba(254,218,119,1) 20%, rgba(221,42,123,1) 40%, #8134af 80%, #515bd4 100% );
 }
 .menu > a {
-    display: flex;
-    color: #e2e2e2;
-    height: 100px;
-    width: 25%;
-    font-size: 30px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  color: #000;
+  height: 100px;
+  width: 25%;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu > :hover {
-    background-color: #515151;
+    transition: .5s;
+    background-color: #0003;
 }
 
 h1 {
-    display: flex;
-    font-size: 50px;
-    justify-content: center;
+  color: #000;
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
 }

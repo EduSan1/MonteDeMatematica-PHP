@@ -1,5 +1,14 @@
 <?php
 
+    /*
+        Objetivo: Site que permite ao usuário calcular a média de quatro números
+        Autor: Eduardo S. Nascimento
+        Data: 17/02/2022
+        Versão: 1.0
+    
+    */
+    require_once("../modulo/config.php");
+
 $nota1 = (float)0;
 $nota2 = (float)0;
 $nota3 = (float)0;
@@ -9,7 +18,7 @@ $media = (float)0;
 if (isset($_POST['btncalc'])) {
 
     if ($_POST['txtn1'] == "" || $_POST['txtn2'] == "" || $_POST['txtn3'] == "" || $_POST['txtn4'] == "") {
-        echo ('<p class="msgErro">PREENCHE TUDO CARAI</p>');
+        echo (ERRO_MSG_CAIXA_VAZIA);
     } else {
 
         $nota1 = $_POST['txtn1'];
@@ -19,7 +28,7 @@ if (isset($_POST['btncalc'])) {
 
         if (!is_numeric($nota1) || !is_numeric($nota2) || !is_numeric($nota3) || !is_numeric($nota4)) {
 
-            echo ('<p class="msgErro">COLOCA SÓ NUMERO</p>');
+            echo (ERRO_MSG_CARACTER_INVALIDO_TEXTO);
         } else {
 
             $media = ($nota1 + $nota2 + $nota3 + $nota4) / 4;
