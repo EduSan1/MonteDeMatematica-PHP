@@ -40,29 +40,27 @@ $num2Acumuladora = '<option>Selecione um número</option> ' . gerarLista(100, 10
 // Quando apertar o botâo btnCalcular...
 if (isset($_POST['btnCalcular'])) {
   //verifica se foram selecionados números 
-  if ($_POST['sltNumInicil'] == "Selecione um número" || $_POST['sltNumFinal'] == "Selecione um número")
+  if ($_POST['sltNumInicial'] == "Selecione um número" || $_POST['sltNumFinal'] == "Selecione um número")
     echo (ERRO_MSG_SELECIONE); // imprime msm de erro 
   else {
     //verifica se o segundo número é menor que o primeiro 
-    if ($_POST['sltNumInicil'] > $_POST['sltNumFinal'])
+    if ($_POST['sltNumInicial'] > $_POST['sltNumFinal'])
       echo (ERRO_MSG_NUMERO_INICIAL_MENOR); // imprime msm de erro 
     else {
       //verifica se os números selecionados são iguais
-      if ($_POST['sltNumInicil'] == $_POST['sltNumFinal'])
+      if ($_POST['sltNumInicial'] == $_POST['sltNumFinal'])
         echo (ERRO_MSG_NUMERO_IGUAL); // imprime msm de erro 
       else {
         //declara número inicial
-        $numInicial = $_POST['sltNumInicil'];
+        $numInicial = $_POST['sltNumInicial'];
         $numFinal = $_POST['sltNumFinal'];
 
         //for para separar impares e pares
         for ($i = (int)0; $i <= $numFinal; $i++) {
           if ($i % 2 != 0) {
-            $arrayImpares[$contadorArrayImpar] = separar($i);
-            $contadorArrayImpar++;
+            $arrayImpares[$i] = separar($i);
           } else if ($i % 2 == 0) {
-            $arrayPares[$contadorArrayPar] = separar($i);
-            $contadorArrayPar++;
+            $arrayPares[$i] = separar($i);
           }
         }
 
@@ -80,9 +78,9 @@ if (isset($_POST['btnCalcular'])) {
         //   }
         // }
 
-        // define a variavel imparesContador como uma mensagem que exibe da quantidade de index criados no array
+        // define a variavel imparesContador como uma mensagem que exibe da quantidade de elementos criados no array
         $imparesContador = '<p>O número de números impares é ' . count($arrayImpares) . '</p>';
-        // define a variavel paresContador como uma mensagem que exibe da quantidade de index criados no array
+        // define a variavel paresContador como uma mensagem que exibe da quantidade de elementos criados no array
         $paresContador = '<p>O número de números pares é ' . count($arrayPares) . '</p>';
       }
     }
@@ -126,9 +124,9 @@ if (isset($_POST['btnCalcular'])) {
     <h2>Par e Ímpar</h2>
     <div class="formularioGeral">
       <form name="frmTabuada" class="form" method="post" action="parImpar.php">
-        <div class="sltNumInicil">
+        <div class="sltNumInicial">
           <label>Número Inicial:</label>
-          <select name="sltNumInicil" id="">
+          <select name="sltNumInicial" id="">
             <?php echo ($num1Acumuladora); ?>
           </select>
         </div>
@@ -147,8 +145,8 @@ if (isset($_POST['btnCalcular'])) {
 
             <div class="numImpar">
               <?php
-              foreach ($arrayImpares as $chave => $valor) {
-                echo ($valor);
+              foreach ($arrayImpares as $chave) {
+                echo ($chave);
               }
               ?>
             </div>
@@ -159,8 +157,8 @@ if (isset($_POST['btnCalcular'])) {
 
             <div class="numPar">
               <?php
-              foreach ($arrayPares as $chave => $valor) {
-                echo ($valor);
+              foreach ($arrayPares as $chave) {
+                echo ($chave);
               }
               ?>
             </div>

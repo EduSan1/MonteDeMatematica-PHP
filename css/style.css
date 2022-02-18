@@ -15,7 +15,7 @@ body {
   align-items: center;
   justify-content: space-around;
   background: rgb(245,133,41);
-  background: linear-gradient(90deg, rgba(245,133,41,1) 0%, rgba(254,218,119,1) 20%, rgba(221,42,123,1) 40%, #8134af 80%, #515bd4 100% );
+  background: linear-gradient(45deg, rgba(245,133,41,1) 0%, rgba(254,218,119,1) 20%, rgba(221,42,123,1) 40%, #8134af 80%, #515bd4 100% );
 }
 .menu > a {
   display: flex;
